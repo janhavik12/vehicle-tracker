@@ -14,7 +14,7 @@ document.getElementById("insert").onclick = function () {
 
   firebase
     .database()
-    .ref("Personell data/" + rfidV)
+    .ref("Personnel data/" + rfidV)
     .set({
       name: nameV,
       vehicleid: vehicleidV,
@@ -37,7 +37,7 @@ document.getElementById("read").onclick = function () {
 
   firebase
     .database()
-    .ref("Personell data/" + rfidV)
+    .ref("Personnel data/" + rfidV)
     .on("value", function (snap) {
       document.getElementById("rfid").value = snap.val().rfid;
       document.getElementById("name").value = snap.val().name;
@@ -53,7 +53,7 @@ document.getElementById("update").onclick = function () {
 
   firebase
     .database()
-    .ref("Personell data/" + rfidV)
+    .ref("Personnel data/" + rfidV)
     .update({
       name: nameV,
       latitude: latitudeV,
@@ -74,7 +74,7 @@ document.getElementById("delete").onclick = function () {
 
   firebase
     .database()
-    .ref("Personell data/" + rfidV)
+    .ref("Personnel data/" + rfidV)
     .remove();
   alert("Data Deleted");
   document.getElementById("name").value = "";
